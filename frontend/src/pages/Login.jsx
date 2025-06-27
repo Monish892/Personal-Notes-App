@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import axios from 'axios'
 
+const API = 'https://personal-notes-app-1zke.onrender.com'
+
 export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const login = async () => {
     try {
-      const res = await axios.post('https://personal-notes-app-1zke.onrender.com/api/auth/login', { email, password })
+      const res = await axios.post(`${API}/api/auth/login`, { email, password })
       localStorage.setItem('token', res.data.token)
       window.location.href = '/'
     } catch (err) {

@@ -1,15 +1,15 @@
 import { useState } from 'react'
 import axios from 'axios'
 
+const API = 'https://personal-notes-app-1zke.onrender.com'
+
 export default function Register() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
   const register = async () => {
     try {
-      const response=await axios.post('https://personal-notes-app-1zke.onrender.com/api/auth/register', { email, password })
-      console.log(response.data);
-      
+      await axios.post(`${API}/api/auth/register`, { email, password })
       alert('Registered successfully!')
     } catch (err) {
       alert('Registration failed')
