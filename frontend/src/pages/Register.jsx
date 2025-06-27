@@ -9,7 +9,9 @@ export default function Register() {
 
   const register = async () => {
     try {
-      await axios.post(`${API}/api/auth/register`, { email, password })
+      const respone=await axios.post(`${API}/api/auth/register`, { email, password })
+      console.log(respone.data);
+      
       alert('Registered successfully!')
     } catch (err) {
       alert('Registration failed')
