@@ -15,6 +15,7 @@ export default function Register() {
       alert('Registered successfully!')
     } catch (err) {
       alert('Registration failed')
+      log.error(err);
     }
   }
 
