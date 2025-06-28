@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import './Notes.css' // Assuming you have a CSS file for styling
 
 const API = 'https://personal-notes-app-1zke.onrender.com'
 

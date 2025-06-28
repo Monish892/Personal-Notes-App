@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import './Login.css' // Assuming you have a CSS file for styling
 
 const API = 'https://personal-notes-app-1zke.onrender.com'
 
