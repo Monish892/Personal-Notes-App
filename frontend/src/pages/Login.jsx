@@ -13,9 +13,9 @@ export default function Login() {
   const login = async () => {
     try {
       const respone = await axios.post(`${API}/api/auth/login`, { email, password })
-      console.log(respone.data)
+      localStorage.setItem('token', respone.data.token)
       alert('Login successful!')
-      navigate('/notes') // Redirect to notes page
+      navigate('/notes') 
     } catch (err) {
       alert('Login failed')
       console.error(err)
