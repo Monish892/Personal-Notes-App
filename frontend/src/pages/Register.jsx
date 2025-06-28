@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const API = 'https://personal-notes-app-1zke.onrender.com'
@@ -6,16 +7,17 @@ const API = 'https://personal-notes-app-1zke.onrender.com'
 export default function Register() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const register = async () => {
     try {
-      const respone=await axios.post(`${API}/api/auth/register`, { email, password })
-      console.log(respone.data);
-      
+      const respone = await axios.post(`${API}/api/auth/register`, { email, password })
+      console.log(respone.data)
       alert('Registered successfully!')
+      navigate('/login') // Redirect to login page
     } catch (err) {
       alert('Registration failed')
-      console.error(err);
+      console.error(err)
     }
   }
 
